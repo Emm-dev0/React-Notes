@@ -1,41 +1,28 @@
+import React, { useEffect } from 'react'
+import { BrowserRouter, Routes, Route} from 'react-router-dom'
+import Notes from './pages/Notes'
+import EditNotes from './pages/EditNotes'
+import Createnote from './pages/Createnote'
+
+
 import { useState } from 'react'
-import { nanoid } from 'nanoid'
-import Header from './components/Header'
-import Notelist from './components/Notelist'
 
 function App() {
-  const [notes, setNotes] = useState([
-    {
-      id: nanoid(),
-      text: "this is my first anote",
-      date: "12/1/23"
-    },
-    {
-      id: nanoid(),
-      text: "this is my t anote",
-      date: "12/1/23"
-    },
-    {
-      id: nanoid(),
-      text: "this is  first anote",
-      date: "12/3/23"
-    },
-    {
-      id: nanoid(),
-      text: "this is my first anote",
-      date: "12/1/23"
-    },
-]);
+   const [notes, setNotes] = useState(JSON.parse(localStorage.getItem('notes')) || [])
 
-
-const addNote = (text) => {
-  console.log(text);
-} 
+   useEffect(() => {
+      localStorage.setItem('notes', JSON.stringify(notes))
+   }, [notes])
+   console.log(notes)
   return ( 
-    <div className='container'>
-    <Header />
-    <Notelist notes={notes} handleAddNote={addNote}/>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Notes notes={notes}/>} />
+        <Route path='/edit-note/:id' element={<EditNotes notes={notes} setNotes={setNotes}/>} />
+        <Route path='/create-note' element={<Createnote setNotes={setNotes}/>} />
+      </Routes>
+    </BrowserRouter>
+    
   )
 }
 

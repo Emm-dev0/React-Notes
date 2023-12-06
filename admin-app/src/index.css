@@ -36,6 +36,7 @@ button {
   border: 1px solid transparent;
   padding: 0.3em 0.8em;
   font-weight: 500;
+  font-size: 1.5rem;
   font-family: inherit;
   background-color: #1a1a1a;
   cursor: pointer;
@@ -46,7 +47,7 @@ button:hover {
 }
 button:focus,
 button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  outline: none;
 }
 
 @media (prefers-color-scheme: light) {
