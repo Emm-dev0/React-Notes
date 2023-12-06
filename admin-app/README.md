@@ -58,7 +58,7 @@ Follow these steps to set up the React Notes App on your local machine:
     npm run dev
     ```
 
-2. Open your browser and go to [http://localhost:3000](http://localhost:3000) to access the React Notes App.
+2. Open your browser and go to [http://localhost:5173/](http://localhost:5173/) to access the React Notes App.
 
 3. Use the intuitive interface to create, view, update, and delete notes as needed.
 
