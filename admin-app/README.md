@@ -26,7 +26,7 @@ The React Notes App is a lightweight note-taking application built using Vite an
 
 ## Demo
 
-For a live demo of the application, visit [React Notes App Demo](#insert-link-here).
+For a live demo of the application, visit [React Notes App Demo](https://react-notes-three-liard.vercel.app/).
 
 ## Installation
 
